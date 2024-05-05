@@ -1,0 +1,118 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+        /* background-image: url("./assets/girl.jpg");
+background-repeat: no-repeat;
+background-size: cover; */
+        background-color: #28313b;
+    }
+    
+    header {
+        height: 70px;
+        z-index: 999;
+    }
+    
+    header .logo img {
+        height: 70px;
+        width: auto;
+    }
+    
+    .hambergur {
+        cursor: pointer;
+    }
+    
+    .main {
+        background: url("assets/girl.jpg")no-repeat center center fixed;
+        background-size: cover;
+        place-content: center;
+        transform-style: preserve-3d;
+        transition: 0.25s;
+        z-index: 99;
+    }
+    
+    @keyframes main-animation {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: perspective(1300px) rotateY(30deg) scale(0.5);
+        }
+    }
+    
+    .body.active .main {
+        border-radius: 50px;
+        animation: main-animation 0.25s linear;
+        transform: perspective(1300px) rotateY(30deg) scale(0.5);
+    }
+    
+    .shadow {
+        z-index: -1;
+    }
+    
+    .body.active .shadow {
+        background-color: #fff;
+        border-radius: 50px;
+    }
+    
+    .body.active .shadow.one {
+        left: -50px;
+        transform: translateZ(-80px);
+        opacity: 0.15;
+        transition: all 0.65s ease-in-out;
+    }
+    
+    .body.active .shadow.two {
+        left: -100px;
+        opacity: 0.1;
+        transform: translateZ(-160px);
+        transition: all 0.65s ease-in-out;
+    }
+    
+    .main-inner h1 {
+        -webkit-text-stroke: 1px #fff;
+        color: white !important;
+    }
+    
+    .nav-bar {
+        width: 250px;
+        top: 50%;
+        right: 80px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    
+    .body.active .nav-bar {
+        opacity: 1;
+    }
+    
+    .nav-bar ul li {
+        opacity: 0;
+        padding: 0;
+        padding-left: 20px;
+        border-radius: 50px;
+        transition: all 0.25s ease-in-out;
+        margin-bottom: 5px;
+    }
+    
+    .body.active .nav-bar ul li {
+        padding: 15px;
+        opacity: 1;
+        list-style-type: none;
+    }
+    
+    .nav-bar ul .active {
+        background-color: rgba(255, 255, 255, 0.09);
+    }
+    
+    .nav-bar ul li:hover {
+        background-color: rgba(255, 255, 255, 0.09);
+    }
+    
+    .nav-bar ul li a {
+        text-decoration: none;
+    }
