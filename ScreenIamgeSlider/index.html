@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="" class="w-100 h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="w-100 h-100 d-flex justify-content-center align-items-center position-relative">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" class="bi bi-caret-left-fill arrow-left" viewBox="0 0 16 16">
+        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+    </svg>
+    <ul class="w-50 h-100 list-unstyled d-flex my-3 justify-content-center">
+        <li><img src="./assets/image1.jpg" alt="" id="1" class="active"></li>
+        <li><img src="./assets/image2.jpg" alt="" id="2"></li>
+        <li><img src="./assets/image3.jpg" alt="" id="3"></li>
+    </ul>
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#fff" class="bi bi-caret-right-fill arrow-right" viewBox="0 0 16 16">
+        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+    </svg>
+    <script>
+        const arrowRight = document.querySelector('.arrow-right')
+        const images = document.querySelectorAll('img')
+        const imagesLength = images.length;
+        console.log(images)
+        let again = false
+
+        function goToNext() {
+            let element = document.querySelector('.active')
+            let index
+            if (again === false) {
+                index = parseInt(element.id) + 1
+            } else {
+                index = parseInt(element.id) - 2
+            }
+            let strIndex = String(index)
+            for (let i = 0; i < imagesLength; i++) {
+                console.log(`helllooo ${i}`)
+                if (images[i].id === strIndex) {
+                    element.className = ""
+                    images[i].className = "active";
+                    again = false
+                    console.log(i)
+                    break;
+                } else if (i === (imagesLength - 1)) {
+                    again = true
+                    break;
+                }
+            }
+        }
+        arrowRight.addEventListener('click', goToNext)
+    </script>
+</body>
+
+</html>

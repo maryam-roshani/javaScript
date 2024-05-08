@@ -1,0 +1,41 @@
+#1 {
+    z-index: 1;
+}
+
+#2 {
+    z-index: 4;
+}
+
+#3 {
+    z-index: 3;
+}
+
+li {
+    position: absolute;
+    height: 50vw;
+}
+
+img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+svg {
+    z-index: 10;
+}
+
+.arrow-right {
+    position: absolute;
+    right: 100px;
+}
+
+.arrow-left {
+    position: absolute;
+    left: 100px;
+}
+
+.active {
+    z-index: 5 !important;
+}
