@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Popup Modal</title>
+</head>
+
+<body class="flex justify-center align-top bg-purple-500">
+    <div class="w-1/2 my-3 shadow-md h-1/2 text-center bg-slate-50">
+        <h1 class="text-lg mx-auto my-3 font-semibold">my Modal</h1>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, eius saepe iste eos dolorem delectus?</p>
+        <button class="button p-3 m-3 hover:bg-blue-400 hover:text-slate-800 hover:shadow-sm hover:border-s-violet-100 bg-blue-700 text-white rounded-lg open-button">open modal</button>
+    </div>
+    <dialog class="modal p-3 rounded-md shadow-lg shadow-green-600 border-lime-300" id="modal">
+        <h2 class="text-lg font-bold mb-3 capitalize">title of the modal</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores dicta ex eum aspernatur ratione veniam.</p>
+        <div class="text-center">
+            <button class="button my-3 close-button bg-black text-white rounded-md px-3 py-2 mx-auto text-xl uppercase font-semibold font-sans hover:font-serif">close</button>
+        </div>
+    </dialog>
+</body>
+<script>
+    const modal = document.querySelector('.modal')
+    const openModal = document.querySelector('.open-button')
+    const closeButton = document.querySelector('.close-button')
+
+    openModal.addEventListener('click', () => {
+        modal.showModal();
+    })
+
+    closeButton.addEventListener('click', () => {
+        modal.close();
+    })
+</script>
+
+</html>

@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.modal::backdrop {
+    background: linear-gradient(red, grey);
+    opacity: 0.4;
+}
