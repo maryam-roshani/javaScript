@@ -4,3 +4,11 @@
 .active {
     transform: rotate(180deg);
 }
+
+#menu-list {
+    bottom: -130px;
+}
+
+#menu-div button#open-menu:hover+ul#menu-list {
+    display: block;
+}
