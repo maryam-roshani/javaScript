@@ -11,11 +11,20 @@ body {
 }
 
 .input-field {
-    display: block;
     margin: 15px auto;
     padding: 10px;
     border-radius: 5px;
     border: none;
     width: 300px;
     height: 100px;
+    background-color: aliceblue;
+    color: black;
+}
+
+#trash {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    color: black;
 }
