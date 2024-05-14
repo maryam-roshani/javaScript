@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<body class="flex justify-center h-screen">
+    <div class="bg-slate-600 p-3 h-1/5 my-auto w-48 text-center">
+        <h1 class="text-white text-3xl gap-2" id="display-time">00 : 00 : 00</h1>
+        <div class="flex justify-between align-items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-stop-circle my-auto cursor-pointer" viewBox="0 0 16 16" id="stop">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                <path d="M5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-play-circle-fill cursor-pointer" viewBox="0 0 16 16" id="play">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-counterclockwise my-auto cursor-pointer" viewBox="0 0 16 16" id="reset">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/>
+              </svg>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
