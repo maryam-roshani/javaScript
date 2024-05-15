@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+    <div class="block">
+        <h1 class="text-center d-block mb-4">Age Calculater</h1>
+        <div class="place rounded-4 p-4 d-flex justify-content-between align-items-center gap-3 rounded-3">
+            <input type="date" class="py-2 px-3 fs-5 font-weight-normal rounded-3 border-0">
+            <button class="btn rounded-2 px-3 h-100 py-2" id="button">Calculate</button>
+        </div>
+        <h2 class="mt-4 font-weight-normal" id="result"></h2>
+    </div>
+    <script>
+        DateInput = document.querySelector('input')
+        calculate = document.getElementById('button')
+        final = document.getElementById('result')
+
+        // "27-11-2020"
+        calculate.onclick = function() {
+            let birthDate = new Date(DateInput.value);
+            const currentDate = new Date();
+
+            const d1 = currentDate.getDate();
+            const m1 = currentDate.getMonth() + 1;
+            const y1 = currentDate.getFullYear();
+
+            const d2 = birthDate.getDate();
+            const m2 = birthDate.getMonth() + 1;
+            const y2 = birthDate.getFullYear();
+
+            let y3, m3, d3
+
+            if (y2 < y1) {
+                if (m1 >= m2) {
+                    m3 = m1 - m2;
+                    y3 = y1 - y2
+                } else {
+                    y3--
+                    m3 = m1 - m2 + 12
+                }
+                if (d1 >= d2) {
+                    d3 = d1 - d2
+                } else {
+                    m3--
+                    d3 = getDaysInMonth(y1, m1) + d1 - d2
+                }
+                if (m3 === -1) {
+                    m3 = 11
+                    y3--
+                }
+                final.innerText = `You Are ${y3} years and ${m3} months and ${d3} days`
+            } else {
+                final.innerText = `the year of your input ${y2} is in future, you have come from future??!!`
+            }
+
+            function getDaysInMonth(year, month) {
+                return new Date(year, month, 0).getDate();
+            }
+        }
+    </script>
+</body>
+
+</html>
