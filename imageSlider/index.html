@@ -29,12 +29,11 @@
         </svg>
     </div>
     <script>
-        let showImages = document.querySelectorAll('.show')
         let images = document.querySelectorAll('img')
         const previousButton = document.getElementById('previous')
         const nextButton = document.getElementById('next')
+        previousButton.addEventListener('click', gotoPrevious)
         nextButton.addEventListener('click', gotoNext)
-        console.log(showImages)
 
         function removeItem() {
             var last = listItems[listItems.length - 1];
@@ -42,6 +41,7 @@
         }
 
         function gotoNext() {
+            let showImages = document.querySelectorAll('.show')
             let ids = []
             let p = []
             for (let i of showImages) {
@@ -50,7 +50,7 @@
             }
             let max = Math.max(...ids)
             images.forEach((image, id) => {
-                if (image.id == max) {
+                if (image.id == max - 2) {
                     p.push(image)
                 } else if (image.id == max + 1) {
                     let nextItem = image
@@ -61,6 +61,30 @@
             p[0].classList.replace('show', 'd-none')
             p[1].classList.replace('d-none', 'show')
             p = []
+        }
+
+        function gotoPrevious() {
+            let showImages = document.querySelectorAll('.show')
+            let ids = []
+            let q = []
+            for (let i of showImages) {
+                newId = parseInt(i.id)
+                ids.push(newId)
+            }
+            let min = Math.min(...ids)
+            images.forEach((image, id) => {
+                if (image.id == min + 2) {
+                    q.push(image)
+                } else if (image.id == min - 1) {
+                    let previousItem = image
+                    console.log(previousItem.id)
+                    q.push(previousItem)
+                }
+            })
+            console.log(q)
+            q[0].classList.replace('d-none', 'show')
+            q[1].classList.replace('show', 'd-none')
+            q = []
         }
     </script>
 </body>
