@@ -12,60 +12,55 @@
 </head>
 
 <body class="d-flex justify-content-center align-items-center">
-    <div class="block">
-        <h1 class="text-center d-block mb-4">Age Calculater</h1>
-        <div class="place rounded-4 p-4 d-flex justify-content-between align-items-center gap-3 rounded-3">
-            <input type="date" class="py-2 px-3 fs-5 font-weight-normal rounded-3 border-0">
-            <button class="btn rounded-2 px-3 h-100 py-2" id="button">Calculate</button>
-        </div>
-        <h2 class="mt-4 font-weight-normal" id="result"></h2>
+    <div class="slider d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="orange" class="bi bi-arrow-left-circle-fill pe-aur" viewBox="0 0 16 16" id="previous">
+            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg>
+        <img src="assets/image1.png" alt="" id="1" class="show">
+        <img src="assets/image2.png" alt="" id="2" class="show">
+        <img src="assets/image3.png" alt="" id="3" class="show">
+        <img src="assets/image4.png" alt="" id="4" class="d-none">
+        <img src="assets/image5.png" alt="" id="5" class="d-none">
+        <img src="assets/image6.png" alt="" id="6" class="d-none">
+        <img src="assets/image7.png" alt="" id="7" class="d-none">
+        <img src="assets/image8.png" alt="" id="8" class="d-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="orange" class="bi bi-arrow-right-circle-fill pe-auto" viewBox="0 0 16 16" id="next">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+        </svg>
     </div>
     <script>
-        DateInput = document.querySelector('input')
-        calculate = document.getElementById('button')
-        final = document.getElementById('result')
+        let showImages = document.querySelectorAll('.show')
+        let images = document.querySelectorAll('img')
+        const previousButton = document.getElementById('previous')
+        const nextButton = document.getElementById('next')
+        nextButton.addEventListener('click', gotoNext)
+        console.log(showImages)
 
-        // "27-11-2020"
-        calculate.onclick = function() {
-            let birthDate = new Date(DateInput.value);
-            const currentDate = new Date();
+        function removeItem() {
+            var last = listItems[listItems.length - 1];
+            last.parentNode.removeChild(last);
+        }
 
-            const d1 = currentDate.getDate();
-            const m1 = currentDate.getMonth() + 1;
-            const y1 = currentDate.getFullYear();
-
-            const d2 = birthDate.getDate();
-            const m2 = birthDate.getMonth() + 1;
-            const y2 = birthDate.getFullYear();
-
-            let y3, m3, d3
-
-            if (y2 < y1) {
-                if (m1 >= m2) {
-                    m3 = m1 - m2;
-                    y3 = y1 - y2
-                } else {
-                    y3--
-                    m3 = m1 - m2 + 12
-                }
-                if (d1 >= d2) {
-                    d3 = d1 - d2
-                } else {
-                    m3--
-                    d3 = getDaysInMonth(y1, m1) + d1 - d2
-                }
-                if (m3 === -1) {
-                    m3 = 11
-                    y3--
-                }
-                final.innerText = `You Are ${y3} years and ${m3} months and ${d3} days`
-            } else {
-                final.innerText = `the year of your input ${y2} is in future, you have come from future??!!`
+        function gotoNext() {
+            let ids = []
+            let p = []
+            for (let i of showImages) {
+                newId = parseInt(i.id)
+                ids.push(newId)
             }
-
-            function getDaysInMonth(year, month) {
-                return new Date(year, month, 0).getDate();
-            }
+            let max = Math.max(...ids)
+            images.forEach((image, id) => {
+                if (image.id == max) {
+                    p.push(image)
+                } else if (image.id == max + 1) {
+                    let nextItem = image
+                    console.log(nextItem.id)
+                    p.push(nextItem)
+                }
+            })
+            p[0].classList.replace('show', 'd-none')
+            p[1].classList.replace('d-none', 'show')
+            p = []
         }
     </script>
 </body>

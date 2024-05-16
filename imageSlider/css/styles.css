@@ -10,27 +10,8 @@ body {
     height: 100%;
 }
 
-.place {
-    background-color: aquamarine;
-}
-
-.place input {
+.slider img {
     width: 300px;
-    position: relative;
-}
-
-.place input::-webkit-calendar-picker-indicator {
-    top: 10px;
-    left: 0;
-    right: 3px;
-    bottom: 0;
-    width: auto;
-    position: absolute;
-    background-position: calc(100% - 10px);
-    background-size: 30px;
-    cursor: pointer;
-}
-
-.place #button {
-    background-color: #8dae1e;
+    height: 500px;
+    object-fit: contain;
 }
