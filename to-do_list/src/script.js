@@ -12,6 +12,8 @@ function addTask() {
         newTask.appendChild(image)
     }
     taskInput.value = "";
+    saveData()
+
 }
 
 
@@ -21,7 +23,19 @@ addButton.addEventListener('click', addTask)
 taskList.addEventListener('click', function(e) {
     if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
+        saveData();
     } else if (e.target.tagName === "IMG") {
         e.target.parentElement.remove();
+        saveData();
     }
-}, false)
+}, false);
+
+function saveData() {
+    localStorage.setItem("data", taskList.innerHTML);
+}
+
+function showTask() {
+    taskList.innerHTML = localStorage.getItem("data")
+}
+
+showTask();
