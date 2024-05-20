@@ -14,12 +14,12 @@
             <span class="text-emerald-500 font-medium underline underline-offset-4 block">Random Password</span>
         </h1>
         <div class="flex my-5 relative">
-            <input type="text" class="p-3 rounded-sm w-full outline-0">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-copy text-emerald-700 fill-current absolute top-3 right-3" viewBox="0 0 16 16">
+            <input type="text" class="p-3 rounded-sm w-full outline-0" id="my-input">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-copy text-emerald-700 fill-current absolute top-3 right-3 cursor-pointer" viewBox="0 0 16 16" id="copy">
                 <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
             </svg>
         </div>
-        <button class="bg-emerald-700 text-slate-50 flex py-2 px-3 gap-2 rounded-sm">
+        <button class="bg-emerald-700 text-slate-50 flex py-2 px-3 gap-2 rounded-sm" id="generate-button">
             <img src="lightning-charge-fill.svg" alt="" class="my-auto">
             Generate Password
         </button>

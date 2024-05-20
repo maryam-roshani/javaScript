@@ -1,4 +1,7 @@
-/* Function to generate combination of password */
+const myInput = document.getElementById('my-input')
+const copyIcon = document.getElementById('copy')
+const generateButton = document.getElementById('generate-button')
+
 function generatePass() {
     let pass = '';
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
@@ -26,7 +29,24 @@ function generatePass() {
 
         pass += str.charAt(char)
     }
+    myInput.value = pass
     return pass;
 }
 
-console.log(generatePass());
+function copyFunction() {
+    // Get the text field
+    var copyText = document.getElementById("my-input");
+
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value);
+
+    // Alert the copied text
+    alert("Copied Password: " + copyText.value);
+}
+
+generateButton.addEventListener('click', generatePass)
+copyIcon.addEventListener('click', copyFunction)
