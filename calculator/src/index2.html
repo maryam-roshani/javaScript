@@ -7,41 +7,41 @@
     <link href="./output.css" rel="stylesheet">
 </head>
 
-<body class="">
-    <div>
-        <form id="calcu" class="rounded-md m-auto outline-none border-0 w-64 bg-gray-800 py-3 px-2 ">
-            <div id="parent">
-                <input type="text" id="result" class="py-2 px-3 text-lg font-medium border-0 outline-none bg-transparent text-white">
+<body class="w-full h-screen flex align-center justify-center">
+    <div id="parent" class="bg-gray-800 p-2 rounded-md my-auto">
+        <form id="calcu" class="rounded-md m-auto outline-none border-0 py-3 px-2 ">
+            <div class="display">
+                <input name="display" type="text" id="result" class="py-2 cursor-pointer px-3 w-full text-lg font-medium border-0 outline-none bg-transparent text-white">
             </div>
             <div>
-                <input type="button" value="AC" onclick="clr()" />
-                <input type="button" value="DE" onclick="del()" />
-                <input type="button" value="." onclick="dis('.')" onkeydown="myFunction(event)">
-                <input type="button" value="/" onclick="dis('/')" onkeydown="myFunction(event)">
+                <input type="button" value="AC" onclick="display.value = '' " />
+                <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1) " />
+                <input type="button" value="." onclick="display.value += '.' " onkeydown="myFunction(event)">
+                <input type="button" value="/" onclick="display.value += '/' " onkeydown="myFunction(event)">
             </div>
             <div>
-                <input type="button" value="7" onclick="dis('7')" onkeydown="myFunction(event)">
-                <input type="button" value="8" onclick="dis('8')" onkeydown="myFunction(event)">
-                <input type="button" value="9" onclick="dis('9')" onkeydown="myFunction(event)">
-                <input type="button" value="*" onclick="dis('*')" onkeydown="myFunction(event)">
+                <input type="button" value="7" onclick="display.value += '7' " onkeydown="myFunction(event)">
+                <input type="button" value="8" onclick="display.value += '8' " onkeydown="myFunction(event)">
+                <input type="button" value="9" onclick="display.value += '9' " onkeydown="myFunction(event)">
+                <input type="button" value="*" onclick="display.value += '*' " onkeydown="myFunction(event)">
             </div>
             <div>
-                <input type="button" value="4" onclick="dis('4')" onkeydown="myFunction(event)">
-                <input type="button" value="5" onclick="dis('5')" onkeydown="myFunction(event)">
-                <input type="button" value="6" onclick="dis('6')" onkeydown="myFunction(event)">
-                <input type="button" value="-" onclick="dis('-')" onkeydown="myFunction(event)">
+                <input type="button" value="4" onclick="display.value += '4' " onkeydown="myFunction(event)">
+                <input type="button" value="5" onclick="display.value += '5' " onkeydown="myFunction(event)">
+                <input type="button" value="6" onclick="display.value += '6' " onkeydown="myFunction(event)">
+                <input type="button" value="-" onclick="display.value += '-' " onkeydown="myFunction(event)">
             </div>
             <div>
-                <input type="button" value="1" onclick="dis('1')" onkeydown="myFunction(event)">
-                <input type="button" value="2" onclick="dis('2')" onkeydown="myFunction(event)">
-                <input type="button" value="3" onclick="dis('3')" onkeydown="myFunction(event)">
-                <input type="button" value="+" onclick="dis('+')" onkeydown="myFunction(event)">
+                <input type="button" value="1" onclick="display.value += '1' " onkeydown="myFunction(event)">
+                <input type="button" value="2" onclick="display.value += '2' " onkeydown="myFunction(event)">
+                <input type="button" value="3" onclick="display.value += '3' " onkeydown="myFunction(event)">
+                <input type="button" value="+" onclick="display.value += '+' " onkeydown="myFunction(event)">
             </div>
             <div>
-                <input type="button" value="00" onclick="dis('00')" onkeydown="myFunction(event)">
-                <input type="button" value="0" onclick="dis('0')" onkeydown="myFunction(event)">
+                <input type="button" value="00" onclick="display.value += '00' " onkeydown="myFunction(event)">
+                <input type="button" value="0" onclick="display.value += '0' " onkeydown="myFunction(event)">
                 <!-- solve function call function solve to evaluate value -->
-                <input type="button" value="=" onclick="solve()">
+                <input type="button" value="=" onclick="display.value = eval(display.value) " id="equal">
             </div>
         </form>
     </div>

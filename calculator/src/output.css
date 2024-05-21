@@ -563,12 +563,28 @@ video {
   margin-bottom: auto;
 }
 
+.flex {
+  display: flex;
+}
+
 .table {
   display: table;
 }
 
-.w-64 {
-  width: 16rem;
+.h-screen {
+  height: 100vh;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .rounded-md {
@@ -600,6 +616,10 @@ video {
 
 .to-zinc-600 {
   --tw-gradient-to: #52525b var(--tw-gradient-to-position);
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-2 {
@@ -645,9 +665,22 @@ video {
   outline-offset: 2px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'sans-serif';
+  box-sizing: border-box;
+}
+
 form {
   margin-left: auto;
   margin-right: auto;
+}
+
+form .display {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
 }
 
 form div {
@@ -657,15 +690,20 @@ form div {
 }
 
 input[type="button"] {
-  margin-inline: auto !important;
-  width: 92%;
-  height: 40px;
+  cursor: pointer;
+  margin: 10px;
+  width: 60px;
+  height: 60px;
   padding: auto;
-  background-color: #1e2835;
-  font-size: 12px;
+  background-color: transparent;
+  font-size: 20px;
   color: aliceblue;
   font-weight: medium;
   border: none;
   border-radius: 5px;
-  box-shadow: -5px -3px 5px 0px rgba(122, 120, 120, 0.75);
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#equal {
+  width: 140px !important;
 }
