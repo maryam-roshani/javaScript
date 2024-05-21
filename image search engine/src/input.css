@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+input {
+    background-color: ;
+}
+
+input::placeholder {
+    font-weight: medium;
+    opacity: 1;
+    color: white;
+}
