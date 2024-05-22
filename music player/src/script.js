@@ -3,6 +3,8 @@ let song_art = document.querySelector(".song-art");
 let song_artist = document.querySelector(".singer-name");
 
 let playpause_btn = document.querySelector(".playpause-song");
+let playIcon = document.getElementById("play-song");
+let pauseIcon = document.getElementById("pause-song");
 let next_btn = document.querySelector(".next-song");
 let prev_btn = document.querySelector(".prev-song");
 
@@ -78,6 +80,8 @@ function playPauseSong() {
 function playSong() {
     // Play the loaded song
     curr_song.play();
+    playIcon.classList.toggle("hidden")
+    pauseIcon.classList.toggle("hidden")
     isPlaying = true;
 
 }
@@ -85,6 +89,8 @@ function playSong() {
 function pauseSong() {
     // Pause the loaded song
     curr_song.pause();
+    pauseIcon.classList.toggle("hidden")
+    playIcon.classList.toggle("hidden")
     isPlaying = false;
 }
 
