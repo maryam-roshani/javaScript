@@ -17,22 +17,22 @@ let updateTimer;
 let curr_song = document.createElement('audio');
 
 let song_list = [{
-        name: "Night Owl",
-        artist: "Broke For Free",
-        image: "Image URL",
-        path: "Night_Owl.mp3"
+        name: "dekalog ix-part 13",
+        artist: "zbeigniew preisner",
+        image: "assets/10-orders.jpg",
+        path: "assets/dekalog-ix-part-13.mp3"
     },
     {
-        name: "Enthusiast",
-        artist: "Tours",
-        image: "Image URL",
-        path: "Enthusiast.mp3"
+        name: "thank god",
+        artist: "Kane Brown and Katelyn Brown",
+        image: "assets/thank-god.jpg",
+        path: "assets/Thank-God.mp3"
     },
     {
-        name: "Shipping Lanes",
-        artist: "Chad Crouch",
-        image: "Image URL",
-        path: "Shipping_Lanes.mp3",
+        name: "wait a minute",
+        artist: "willow smith",
+        image: "assets/wait-a-minute.jpg",
+        path: "assets/wait-a-minute.mp3",
     },
 ];
 
@@ -46,8 +46,7 @@ function loadSong(song_index) {
     curr_song.load();
 
     // Update details of the song
-    song_art.src =
-        "url(" + song_list[song_index].image + ")";
+    song_art.src = song_list[song_index].image;
     song_name.textContent = song_list[song_index].name;
     song_artist.textContent = song_list[song_index].artist;
 
