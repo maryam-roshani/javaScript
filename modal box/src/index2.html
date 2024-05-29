@@ -9,7 +9,7 @@
 
 <body class="flex justify-center align-top bg-blue-700">
     <button class="rounded-full w-32 bg-slate-50 h-14 font-medium text-xl my-auto open-button">Submit</button>
-    <div class="p-3 hidden rounded-md w-72 h-64 text-center absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[0.1] bg-slate-50 my-auto mx-auto" id="modal">
+    <div class="p-3 hidden rounded-md w-72 h-64 text-center absolute left-1/2 bg-slate-50 my-auto mx-auto popup" id="modal">
         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-check-circle-fill absolute fill-current text-green-500 bg-white -top-6 left-28 rounded-full" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
         </svg>
@@ -25,11 +25,14 @@
 
     openModal.addEventListener('click', () => {
         modal.classList.add('open-popup')
+        modal.classList.remove('popup')
+        console.log(modal.classList)
         modal.classList.remove('hidden');
     })
 
     closeButton.addEventListener('click', () => {
         modal.classList.remove('open-popup')
+        modal.classList.add('popup')
         modal.classList.add('hidden');
     })
 </script>
