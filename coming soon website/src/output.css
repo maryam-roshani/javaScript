@@ -744,32 +744,17 @@ body {
 }
 
 #rocket {
-  animation: example 3s linear infinite;
+  animation: example 4s linear infinite;
 }
 
 @keyframes example {
   0% {
-    bottom: 36px;
-    opacity: 0.4;
-  }
-
-  25% {
-    bottom: 300px;
-    opacity: 0.6;
-  }
-
-  50% {
-    bottom: 450px;
-    opacity: 0.8;
-  }
-
-  75% {
-    bottom: 600px;
-    opacity: 1;
+    bottom: 0;
+    opacity: 0;
   }
 
   100% {
-    bottom: 700px;
+    bottom: 105%;
     opacity: 1;
   }
 }
