@@ -562,10 +562,6 @@ video {
   position: relative;
 }
 
-.bottom-9 {
-  bottom: 2.25rem;
-}
-
 .right-9 {
   right: 2.25rem;
 }
@@ -628,6 +624,10 @@ video {
   width: 100%;
 }
 
+.basis-28 {
+  flex-basis: 7rem;
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -679,6 +679,11 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-lg {
