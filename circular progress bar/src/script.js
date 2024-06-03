@@ -1,6 +1,11 @@
-const dots = document.getElementsByClassName(dots)
+function waiting() {
+    const dots = document.getElementsByClassName('dots')
+    for (const item of dots) {
+        item.classList.add('larger')
+        setTimeout(() => {
 
-for (const item in dots) {
-    item.classList.add('larger')
-    setTimeout()
+        }, 500)
+    }
 }
+
+window.onload = waiting()
