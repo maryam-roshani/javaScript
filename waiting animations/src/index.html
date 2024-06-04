@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <title>Popup Modal</title>
+</head>
+
+<body class="flex justify-center align-top bg-purple-500">
+    <div class="bg-slate-50 w-96 h-96 rounded-full">
+        <div class="loader"></div>
+        <div class="loder-2"></div>
+    </div>
+</body>
+<script>
+    const modal = document.querySelector('.modal')
+    const openModal = document.querySelector('.open-button')
+    const closeButton = document.querySelector('.close-button')
+
+    openModal.addEventListener('click', () => {
+        modal.showModal();
+    })
+
+    closeButton.addEventListener('click', () => {
+        modal.close();
+    })
+</script>
+
+</html>

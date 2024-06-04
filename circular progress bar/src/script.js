@@ -6,13 +6,12 @@ function waiting() {
         //     }, 500)
         // }
     for (let i = 0; i < dots.length; i++) {
-        task(i);
-    }
-
-    function task(i) {
         setTimeout(() => {
             dots[i].classList.add('larger')
-        }, 500 * i);
+        }, 1000 * i);
+        // if (i === 2) {
+        //     i = 0
+        // }
     }
 }
 
