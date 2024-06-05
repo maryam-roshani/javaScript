@@ -67,6 +67,33 @@
     height: 4%;
 }
 
+.second {
+    margin: 0;
+    position: absolute;
+    top: 49%;
+    left: 100px;
+    z-index: 2;
+    border-right: 92px solid #3582c5;
+    width: 0%;
+    height: 2%;
+    animation: spinner 0.7s linear infinite;
+}
+
+.minute {
+    margin: 0;
+    position: absolute;
+    left: 37%;
+    top: 37%;
+    z-index: 1;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    border-bottom: 3px solid #3582c5;
+    border-left: 3px solid #3582c5;
+    width: 26%;
+    height: 26%;
+    animation: spinner 0.9s ease-in-out infinite;
+}
+
 @keyframes spin {
     0% {
         transform: rotate(0turn);
