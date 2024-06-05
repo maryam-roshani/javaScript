@@ -54,3 +54,24 @@
         transform: rotate(1turn);
     }
 }
+
+.spin {
+    margin: 0;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    z-index: 3;
+    border-radius: 50%;
+    background-color: #3582c5;
+    width: 4%;
+    height: 4%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0turn);
+    }
+    100% {
+        transform: rotate(1turn);
+    }
+}
