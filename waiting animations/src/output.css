@@ -558,6 +558,16 @@ video {
   position: relative;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .flex {
   display: flex;
 }
@@ -593,10 +603,6 @@ video {
 }
 
 .loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   border: 3px solid transparent;
   border-radius: 50%;
   border-top: 3px solid #3582c5;

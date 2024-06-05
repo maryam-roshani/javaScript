@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 .loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     border: 3px solid transparent;
     border-radius: 50%;
     border-top: 3px solid #3582c5;
